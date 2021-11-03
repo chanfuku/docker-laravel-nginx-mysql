@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class NoteFactory extends Factory
 {
@@ -14,7 +15,8 @@ class NoteFactory extends Factory
     public function definition()
     {
         return [
-            //
+          'title' => Str::random(100),
+          'body' => $this->faker->text(),
         ];
     }
 }
