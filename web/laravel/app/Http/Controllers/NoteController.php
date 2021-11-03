@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
-class NoteController extends Controller
+class NoteController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -44,9 +45,9 @@ class NoteController extends Controller
      * @param  \App\Models\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function show(Note $note)
+    public function show($id)
     {
-        //
+      return response()->json(Note::find($id));
     }
 
     /**
