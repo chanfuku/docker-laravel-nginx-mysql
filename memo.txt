@@ -1,0 +1,15 @@
+ec2にubuntuを立てる
+docker, docker-composeをインストール
+ubuntuにgitをインストールする
+sudo apt install git
+git --version
+git clone https://github.com/chanfuku/docker-laravel-nginx-mysql.git
+cd docker-laravel-nginx-mysql && docker-compose up -d
+docker-compose exec php bash
+cd /var/www/laravel && composer install
+
+to be continued
+
+
+
+

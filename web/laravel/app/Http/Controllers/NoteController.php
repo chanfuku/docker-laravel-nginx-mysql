@@ -36,7 +36,7 @@ class NoteController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+      Note::create($request->all());
     }
 
     /**
@@ -47,7 +47,13 @@ class NoteController extends BaseController
      */
     public function show($id)
     {
-      return response()->json(Note::find($id));
+      $note = Note::find($id);
+      return response()->json(
+        $note,
+        isset($note) ? 200 : 404,
+        ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+        JSON_UNESCAPED_UNICODE
+      );
     }
 
     /**
