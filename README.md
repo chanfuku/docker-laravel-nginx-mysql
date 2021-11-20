@@ -17,6 +17,9 @@ docker-compose down --rmi all --volumes
 curl localhost/api/note/1
 # メモ登録APIを実行
 curl -X POST -H "Content-Type: application/json" -d '{"title":"あああ", "body":"いいい\nううう"}' localhost/api/note
+# ユニットテスト実行(docker内で)
+cd /var/www/laravel
+./vendor/bin/phpunit
 ```
 
 ## laravel .env
